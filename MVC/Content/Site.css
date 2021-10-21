@@ -1,0 +1,93 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+element.style {
+}
+mat-mini {
+    height: 200px;
+    width: 150px;
+}
+img {
+    margin-top: 30%;
+    height: 100px;
+    width: 100px;
+}
+table {
+   
+   
+    background-color: aqua;
+}
+tr {
+    
+    text-align: center;
+    padding-bottom: .5em;
+    
+   
+}
+td {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    padding-left:2em;   
+}
+#Register {
+    margin-left: 30%;
+}
+.form-body {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 3%;
+    margin-bottom: 15%;
+    border-spacing: 2em 2em 2em 2em;
+    padding: 1em 1em 1em 3em;
+    vertical-align: middle;
+    align-content: center;
+    background-color: aqua;
+}
+.form-group {
+    border-spacing: 2em 2em 2em 2em;
+    padding: 1em 1em 1em 3em;
+    vertical-align: middle;
+    text-align:center;
+}
+label {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    color: #333;
+    height: 20px;
+   
+}
+h2{
+    width:100%;
+    background-color: aliceblue;
+    text-align:center;
+}
+
+input {
+   
+    border: 1px solid #000;
+    border-spacing: 2em 2em 2em 2em;
+    float: right;
+    margin-right:10px;
+}

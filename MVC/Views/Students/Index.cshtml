@@ -1,0 +1,92 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<MVC.Models.MvcStudentsModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+
+    <a href="@Url.Action("AddOrEdit","Students")" class="btn">
+        <img src="~/Content/plus.jpg" />
+    </a>
+</p>
+<table class="table table-striped">
+    <thead class="table-heading">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().StudentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Email)
+            </th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a href="@Url.Action("AddOrEdit", "Students", new {id=item.StudentID})" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+
+                    <a onclick="Delete(@item.StudentID)" class="btn btn-default "><i class="glyphicon glyphicon-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+@Html.PagedListPager(Model, page=>Url.Action("Index", new { page}))
+
+@section scripts
+    {
+    <script type="text/javascript">
+        $(function () {
+            var SuccessMessage = '@TempData["SuccessMessage"]'
+            if (SuccessMessage !='')
+                alertify.success(SuccessMessage);
+        });
+        function Delete(id) {
+            alertify.confirm('Web Api CURD Operations', 'Are you sure to delete this record?', function () {
+                window.location.href = '@Url.Action("Delete", "Students")/' + id;
+            }, null);
+
+        }
+    </script>
+
+
+}
